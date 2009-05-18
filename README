@@ -1,0 +1,47 @@
+mvn2-spring-openjpa
+Release 1
+July 17, 2009
+
+What is mvn2-spring-openjpa?
+
+This project is intended to serve as an example of an integration test using Maven 2, Spring 2,
+JPA, Open JPA, and HSQLDB.  I have intentionally left the project as simple as possible so
+that it might be useful to others that are trying to implements similar integration tests in their
+projects.
+
+What's so great about mvn2-spring-openjpa?
+
+Besides installing Java 5 (you've installed this already, right?) and Maven 2, this project
+requires no other "manual" downloads.  Maven 2 takes care of all dependency management issues.
+A great side effect of Maven's dependency management capabilities is that we don't have to
+install and configure a database.
+
+What are the prerequisites for running mvn2-spring-jpa?
+
+1. Java 5 or greater. 
+2. Maven 2.  I am using release 2.0.9
+
+How do I run the tests in mvn2-spring-openjpa?
+
+Very simple.  After unzipping/untarring the file you downloaded, run "mvn test" from the mvn2-spring-jpa
+directory.  Most likely you will need to put the release directory into a path with no spaces.  I use
+c:\projects\mvn2-spring-openjpa.
+
+What exactly does mvn2-spring-openjpa do? The short answer
+
+"mvn test" runs the JUnit test net.usefulbits.PersonTest.
+
+What exactly does mvn2-spring-openjpa do? The medium (but highly abbreviated) answer
+
+0. You run "mvn test" from within the mvn2-spring-jpa directory.
+1. Maven loads pom.xml and downloads required jars (don't undestimate how powerful this is!)
+2. OpenJPA automatically creates a HSQL database and a Person table in that database.
+3. Maven runs the test class net.usefulbits.PersonTest after Spring injects a fully configured
+net.usefulbits.dao.JpaPersonDao into the test class.
+4. This test class has several @Test methods in it, but they all boil down to saving a
+net.usefulbits.Person to the database and then quering the database to make sure the
+Person was actually saved.
+
+What about mvn2-spring-jpa?
+
+This sample was taken from David Krisch's excellent mvn2-spring-jpa sample at http://code.google.com/p/mvn2-spring-jpa and adapted for use with openjpa by Steve Dalton. If you are using Hibernate have a look at mvn2-spring-jpa, but if you've never used Hibernate before and need to deploy to a standard JEE container - openjpa might be for you.
