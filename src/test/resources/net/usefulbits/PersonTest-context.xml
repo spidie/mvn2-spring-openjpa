@@ -16,6 +16,8 @@
 
     <tx:annotation-driven />
 
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
     <bean id="personDao" class="net.usefulbits.dao.JpaPersonDao" />
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
