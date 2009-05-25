@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class JpaPersonDao implements PersonDao {
 
+	@PersistenceContext
     EntityManager fEntityManager;
 
-    @PersistenceContext
     public void setEntityManager(EntityManager entityManager) {
         fEntityManager = entityManager;
     }

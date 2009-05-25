@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import net.usefulbits.dao.JpaPersonDao;
+import net.usefulbits.dao.PersonDao;
 import net.usefulbits.model.Person;
 
 import javax.annotation.Resource;
@@ -17,10 +17,10 @@ import java.sql.SQLException;
 @ContextConfiguration
 public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
 
-    private JpaPersonDao fPersonDao;
+    private PersonDao fPersonDao;
     
     @Resource
-    public void setPersonDao(JpaPersonDao personDao) {
+    public void setPersonDao(PersonDao personDao) {
         fPersonDao = personDao;
     }
 

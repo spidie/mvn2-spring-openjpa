@@ -1,5 +1,7 @@
 package net.usefulbits.dao;
 
+import javax.persistence.EntityManager;
+
 import net.usefulbits.model.Person;
 
 public interface PersonDao {
@@ -10,4 +12,6 @@ public interface PersonDao {
     void delete(Person person);
 
     void update(Person person);
+    
+    EntityManager getEntityManager()
 }
