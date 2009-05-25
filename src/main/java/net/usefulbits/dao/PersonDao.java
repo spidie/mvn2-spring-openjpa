@@ -13,5 +13,5 @@ public interface PersonDao {
 
     void update(Person person);
     
-    EntityManager getEntityManager()
+    EntityManager getEntityManager();
 }
