@@ -2,7 +2,7 @@ mvn2-spring-openjpa
 Release 1
 July 17, 2009
 
-What is mvn2-spring-openjpa?
+What is mvn2-spring-openjpa
 
 This project is intended to serve as an example of an integration test using Maven 2, Spring 2,
 JPA, Open JPA, and HSQLDB.  I have intentionally left the project as simple as possible so
