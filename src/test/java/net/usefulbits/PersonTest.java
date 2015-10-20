@@ -27,7 +27,7 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Test
     public void testSave() {
         createAndSavePerson("David", 28);
-        assertEquals(1, countRowsInTable("person"));
+        assertEquals(2, countRowsInTable("person"));
 
         Person david = getSinglePerson();
         assertEquals("Name not saved correctly", "David", david.getName());
