@@ -78,7 +78,7 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
         person.setName(name);
         person.setAge(age);
 
-        fPersonDao.save(person)
+        fPersonDao.save(person);
 
         // Must flush the person to the database before trying to find it
         fPersonDao.getEntityManager().flush();
