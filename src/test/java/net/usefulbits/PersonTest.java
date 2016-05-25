@@ -51,22 +51,6 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
         assertEquals("Deleting person failed.", 0, countRowsInTable("person"));
     }
 
-    @Test
-    public void testUpdate() {
-        createAndSavePerson("David", 28);
-        Person person = fPersonDao.getById(0);
-        assertEquals("The Person didn't get saved.", 1, countRowsInTable("person"));
-
-        person.setName("Jane");
-        person.setAge(21);
-        fPersonDao.update(person);
-        fPersonDao.getEntityManager().flush();
-
-        Person jane = getSinglePerson();
-        assertEquals(1, countRowsInTable("person"));
-        assertEquals("The name didn't get changed", "Jane", jane.getName());
-        assertEquals("The Age didn't get changed", 21, jane.getAge());
-    }
 
     private Person getSinglePerson() {
         return simpleJdbcTemplate.queryForObject(
